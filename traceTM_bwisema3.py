@@ -58,7 +58,7 @@ class TM:
 
         # add initial state (name of state, index of tapehead, hist)
         h = []
-        new = (start, 0, h)
+        new = (start, 0, h, string)
 
         # create queue 
         queue = []
@@ -67,26 +67,28 @@ class TM:
         # while we have configs and below threshold, loop
         while(queue and not self.max_reached):
             self.depth += 1
-            src, index, hist = queue.pop(0)
+            src, index, hist, s = queue.pop(0)
 
             # if found accept state, make sure we have finished string before accepting, else continue
             if src in self.accept:
                 if index == len(string):
                     index += 2
                     self.num_trans += 1
-                    hist.append(''.join(string[:index]+[src]+string[index:]))
+                    hist.append(''.join(s[:index]+[src]+s[index:]))
                     return hist.copy()
                 else:
                     continue
 
-            if index >= len(string):
+            if index >= len(s):
                 continue
 
             # increase num of trans, and add new tranisitons to queue
             self.num_trans += 1
-            letter = string[index]
+            letter = s[index]
             if letter in self.graph[src]:
                 for trans in self.graph[src][letter]:
+                    sold = s.copy()
+                    s[index] = trans[1]
                     if trans[2] == "R":
                         x = index + 1
                     elif trans[2] =="L":
@@ -98,12 +100,12 @@ class TM:
                         x = index + 1
                     
                     # need to pop since local copy
-                    hist.append(''.join(string[:index] + [src] + string[index:]))
-                    queue.append((trans[0], x, hist.copy()))
+                    hist.append(''.join(sold[:index] + [src] + sold[index:]))
+                    queue.append((trans[0], x, hist.copy(), s.copy()))
                     hist.pop()
             
             # check make depth flag
-            if(self.depth == self.flag):
+            if(self.depth - 1 == self.flag):
                 self.max_reached = True
 
         # empty string means reject
@@ -112,11 +114,11 @@ class TM:
     def TM_output(self, path, string, depth, max_reached):
         '''Prints output for a string'''
         if(path):
-            print(f'String ({string}) accepted in {depth} and had the following path')
+            print(f'String ({string}) accepted in {len(path)} and had the following path')
             print(','.join(path))
         else:
             if max_reached:
-                print("Max depth reached for ({string})")
+                print(f"Max depth reached for ({string})")
             else:
                 print(f'String ({string}) rejected in {depth}')
         print("")

@@ -1,0 +1,16 @@
+Name: ﻿Containsdoubleb
+Strings: ['abba', 'abaaaaaabb', 'abcdacdacdacdb', 'abbbbbbbbbbbbbbbbb']
+Max Depth: 17
+Number of Transitions: 50
+(depth and transitions counted across all strings)
+
+String (abba) accepted in 6 and had the following path
+q1abba_,aq1bba_,abq2ba_,abbq3a_,abbaq3_,abbaq4
+
+String (abaaaaaabb) accepted in 12 and had the following path
+q1abaaaaaabb_,aq1baaaaaabb_,abq2aaaaaabb_,abaq1aaaaabb_,abaaq1aaaabb_,abaaaq1aaabb_,abaaaaq1aabb_,abaaaaaq1abb_,abaaaaaaq1bb_,abaaaaaabq2b_,abaaaaaabbq3_,abaaaaaabbq4
+
+String (abcdacdacdacdb) rejected in 15
+
+Max depth reached for (abbbbbbbbbbbbbbbbb)
+

@@ -1,0 +1,9 @@
+Name: ﻿oddc
+Strings: ['ccc']
+Max Depth: 5
+Number of Transitions: 5
+(depth and transitions counted across all strings)
+
+String (ccc) accepted in 5 and had the following path
+q1ccc_,cq2cc_,ccq1c_,cccq2_,cccq3
+

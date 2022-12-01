@@ -1,0 +1,15 @@
+Name: book_example_M1
+
+Strings: ['00#00', '01#01', '0#1']
+Max Depth: 19
+Number of Transitions: 41
+(depth and transitions counted across all strings)
+
+String (00#00) accepted in 19 and had the following path
+q100#00_,xq20#00_,x0q2#00_,x0#q400_,x0q6#x0_,xq70#x0_,q7x0#x0_,xq10#x0_,xxq2#x0_,xx#q4x0_,xx#xq40_,xx#q6xx_,xxq6#xx_,xq7x#xx_,xxq1#xx_,xx#q8xx_,xx#xq8x_,xx#xxq8_,xx#xxq9
+
+String (01#01) accepted in 19 and had the following path
+q101#01_,xq21#01_,x1q2#01_,x1#q401_,x1q6#x1_,xq71#x1_,q7x1#x1_,xq11#x1_,xxq3#x1_,xx#q5x1_,xx#xq51_,xx#q6xx_,xxq6#xx_,xq7x#xx_,xxq1#xx_,xx#q8xx_,xx#xq8x_,xx#xxq8_,xx#xxq9
+
+String (0#1) rejected in 3
+

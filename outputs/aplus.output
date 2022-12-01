@@ -1,0 +1,18 @@
+Name: aplus
+Strings: ['a', 'aaaa', 'aaaaaaaa', 'abcdefg', 'aaaaaaaaaaaaaaa']
+Max Depth: 11
+Number of Transitions: 39
+(depth and transitions counted across all strings)
+
+String (a) accepted in 3 and had the following path
+q1a_,aq2_,aq3
+
+String (aaaa) accepted in 6 and had the following path
+q1aaaa_,aq1aaa_,aaq1aa_,aaaq1a_,aaaaq2_,aaaaq3
+
+Max depth reached for (aaaaaaaa)
+
+String (abcdefg) rejected in 3
+
+Max depth reached for (aaaaaaaaaaaaaaa)
+

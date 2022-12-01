@@ -1,0 +1,4 @@
+TM for a+
+
+accepts: a, aa, aaa, ...
+rejects: _, b, etc
